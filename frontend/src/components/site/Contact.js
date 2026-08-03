@@ -4,8 +4,13 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
 import { toast } from "sonner";
 
+// Contact form supports TWO backends:
+//   1) Web3Forms (recommended for Cloudflare Pages / static hosting) —
+//      set REACT_APP_WEB3FORMS_KEY in your .env or hosting env vars.
+//      Free key at https://web3forms.com — inquiries are emailed to you.
+//   2) Fallback: your FastAPI /api/inquiries backend if REACT_APP_BACKEND_URL is set.
+const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 const INTERESTS = [
   { v: "laptops", l: "Laptops" },
@@ -40,12 +45,36 @@ export default function Contact() {
     }
     setLoading(true);
     try {
-      await axios.post(`${API}/inquiries`, form);
+      if (WEB3FORMS_KEY) {
+        // Web3Forms: emails you directly, no backend needed
+        const payload = {
+          access_key: WEB3FORMS_KEY,
+          subject: `New inquiry from ${form.name} — ${form.interest}`,
+          from_name: "freresglobal.com",
+          name: form.name,
+          email: form.email,
+          company: form.company || "—",
+          interest: form.interest,
+          message: form.message,
+        };
+        const res = await axios.post("https://api.web3forms.com/submit", payload, {
+          headers: { "Content-Type": "application/json", Accept: "application/json" },
+        });
+        if (!res?.data?.success) throw new Error(res?.data?.message || "Submission failed");
+      } else if (BACKEND_URL) {
+        await axios.post(`${BACKEND_URL}/api/inquiries`, form);
+      } else {
+        throw new Error("No form backend configured. Set REACT_APP_WEB3FORMS_KEY.");
+      }
       setSent(true);
       toast.success("Inquiry received. Our team will respond within one business day.");
       setForm({ name: "", email: "", company: "", interest: "servers", message: "" });
     } catch (err) {
-      const detail = err?.response?.data?.detail || "Something went wrong. Please try again.";
+      const detail =
+        err?.response?.data?.detail ||
+        err?.response?.data?.message ||
+        err?.message ||
+        "Something went wrong. Please try again.";
       toast.error(typeof detail === "string" ? detail : "Please check your inputs.");
     } finally {
       setLoading(false);
