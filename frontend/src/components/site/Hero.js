@@ -3,8 +3,8 @@ import { motion, useScroll, useTransform, useMotionValue, useSpring } from "fram
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 const LINES = [
-  "Enterprise hardware,",
-  "delivered with",
+  "Enterprise hardware, ",
+  "delivered with ",
   "surgical precision.",
 ];
 
@@ -106,10 +106,11 @@ export default function Hero() {
       >
         <h1
           data-testid="hero-title"
+          aria-label="Enterprise hardware, delivered with surgical precision."
           className="font-display text-[13vw] md:text-[9.5vw] lg:text-[8.2vw] font-medium leading-[0.92] tracking-tighter text-white"
         >
           {LINES.map((line, i) => (
-            <span key={i} className="line-reveal">
+            <span key={i} className="line-reveal" aria-hidden="true">
               <motion.span
                 initial={{ y: "110%" }}
                 animate={{ y: "0%" }}
