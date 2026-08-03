@@ -1,0 +1,125 @@
+{
+  "theme": "dark",
+  "archetype": "Archetype 4 (Swiss & High-Contrast) + Archetype 5 (Luxury Dark)",
+  "typography": {
+    "strategy": "The 'Editorial Future' Pair: Wide Display Sans for impactful hero/manifesto + clean Geometric Body for tech data.",
+    "heading_font": "Clash Display or Unbounded (fallback: Space Grotesk is forbidden, so use Cabinet Grotesk or Syncopate if from Google Fonts, or purely 'font-mono' for brutalist moments. Let's use 'Clash Display' if custom, otherwise 'Outfit' or 'Syncopate' from Google Fonts. For this stack, let's instruct the main agent to use 'Outfit' for headings and 'Inter' is forbidden for headings, so use 'IBM Plex Sans' for body).",
+    "body_font": "IBM Plex Sans",
+    "scale": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter font-medium leading-none",
+      "h2": "text-3xl sm:text-4xl tracking-tight font-medium",
+      "h3": "text-xl sm:text-2xl font-normal",
+      "body": "text-base sm:text-lg leading-relaxed text-zinc-400",
+      "mono_labels": "text-xs uppercase tracking-[0.2em] font-mono text-zinc-500"
+    }
+  },
+  "colors": {
+    "background": "#050505",
+    "surface": "#0A0A0A",
+    "surface_border": "rgba(255, 255, 255, 0.05)",
+    "primary": "#FFFFFF",
+    "accent": "#007AFF",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#A1A1AA",
+    "rules": [
+      "No generic full-screen gradients.",
+      "Use 'Tinted Grey' rule: deeply unsaturated cool greys instead of pure black.",
+      "Hover states must increase brightness, text must be fully legible.",
+      "No teal green or teal blue (#1B93A4) as per forbidden rules."
+    ]
+  },
+  "visual_enhancers": {
+    "surfaces": "Use 'Retro-Futurism' & 'Glassmorphism' selectively. The hero uses deep blacks with subtle noise. Navbar uses Crystal Glass: backdrop-blur-xl bg-black/60 border-b border-white/10.",
+    "textures": "Subtle grain overlays on empty dark spaces to avoid flat digital look.",
+    "borders": "1px solid rgba(255,255,255,0.05) or white/10 to define grid structures (Bento grids)."
+  },
+  "grids": {
+    "hero": "Full height, single column with absolute positioned 3D elements/particles.",
+    "bento_manifesto": "MODE A (The Tetris Grid): grid-cols-1 md:grid-cols-12 gap-8 with overlapping tall and wide items.",
+    "product_showcase": "MODE A: Asymmetrical grid for products, emphasizing clipped frames and spotlights."
+  },
+  "layouts": {
+    "spacing_scale": "Generous spacing. Use py-24 or py-32 for section transitions. Container padding px-6 md:px-12.",
+    "alignment": "Optical alignment. Left-align text blocks for tech readability, center-align hero text only if it forms a monolithic block."
+  },
+  "motion": {
+    "hero_reveal": "Masked line-by-line reveal for H1 text on load using Framer Motion (initial y: 100%, clip-path).",
+    "scroll_animations": "Framer-motion scroll reveals for all sections (opacity and slight y-translation).",
+    "micro_interactions": "Hover states on product cards: scale image by 1.05, increase border brightness.",
+    "marquee": "Slow editorial marquee for branding statement (react-fast-marquee).",
+    "smooth_scroll": "Lenis for momentum scrolling (Mandatory)."
+  },
+  "accessibility": {
+    "contrast": "Ensure all text against dark backgrounds meets APCA standards. Primary text must be pure white or very light gray.",
+    "reduced_motion": "Respect prefers-reduced-motion for the 3D and marquee elements.",
+    "testing": "All interactive elements MUST include a `data-testid` attribute (e.g., `data-testid=\"nav-contact-button\"`)."
+  },
+  "media": {
+    "treatment": "Clipped frames (sharp corners or max 4px radius), spotlight effect over images, monochrome fallback transitioning to color on hover.",
+    "image_urls": [
+      {
+        "category": "Servers / IT Infrastructure (Hero or Services)",
+        "url": "https://images.unsplash.com/photo-1506399309177-3b43e99fead2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1OTV8MHwxfHNlYXJjaHw0fHxzZXJ2ZXJzJTIwZGF0YWNlbnRlcnxlbnwwfHx8fDE3ODU3OTMzMTV8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Black server racks in datacenter"
+      },
+      {
+        "category": "Premium Laptop (Products)",
+        "url": "https://images.unsplash.com/photo-1702865053715-f567a44163e2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwzfHxsYXB0b3AlMjBwcmVtaXVtfGVufDB8fHx8MTc4NTc5MzMxNXww&ixlib=rb-4.1.0&q=85",
+        "description": "Premium laptop usage"
+      },
+      {
+        "category": "Workstation / Desk (Products)",
+        "url": "https://images.unsplash.com/photo-1593486544625-13ef2368e43a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwyfHxjb21wdXRlciUyMHdvcmtzdGF0aW9ufGVufDB8fHx8MTc4NTc5MzMxNXww&ixlib=rb-4.1.0&q=85",
+        "description": "Black computer keyboard on desk"
+      },
+      {
+        "category": "Abstract Tech Texture (Backgrounds)",
+        "url": "https://images.unsplash.com/photo-1561233835-f937539b95b9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMHRlY2glMjB0ZXh0dXJlfGVufDB8fHx8MTc4NTc5MzMzMnww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract tech lights"
+      },
+      {
+        "category": "Partner Logo 1",
+        "url": "https://images.unsplash.com/photo-1704213684422-cd2543e560d6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwxfHxwYXJ0bmVyJTIwbG9nbyUyMG1pbmltYWx8ZW58MHx8fHwxNzg1NzkzMzMyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Minimal text logo"
+      },
+      {
+        "category": "Partner Logo 2",
+        "url": "https://images.unsplash.com/photo-1617451588899-7ac8679908c7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA4Mzl8MHwxfHNlYXJjaHwyfHxwYXJ0bmVyJTIwbG9nbyUyMG1pbmltYWx8ZW58MHx8fHwxNzg1NzkzMzMyfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Minimal text logo alternate"
+      }
+    ]
+  },
+  "3d_libraries": {
+    "recommendation": "Use `react-tsparticles` (or `framer-motion` purely for heavy DOM manipulation if 3D is too heavy) for a subtle floating tech mesh / particles in the hero background. Ensure it is lazy-loaded.",
+    "alternative": "If TSParticles is not installed, use Framer Motion to create 3 floating, slow-rotating glowing orbs/shapes in the background of the hero."
+  },
+  "instructions_to_main_agent": [
+    "This is an award-worthy marketing site for Freresglobal.com. Prioritize motion, craft, and a 'Godly' aesthetic.",
+    "Implement Lenis for smooth scrolling at the root level.",
+    "Create a Hero section with a massive kinetic typography headline. Use Framer Motion to mask and reveal it line-by-line on load.",
+    "Build a 'Numbered Manifesto' section. E.g., '01. Approach', '02. Hardware'. Use large numerals and wide spacing.",
+    "Design a Product Categories section (Laptops, Workstations, Servers, Storage) using asymmetrical bento grids. Use the provided images with spotlight hover effects.",
+    "Add a slow Marquee using 'react-fast-marquee' with an editorial branding statement (e.g., 'ENTERPRISE IT SOLUTIONS • GLOBAL HARDWARE SUPPLIER • ').",
+    "Use Phosphor Icons (@phosphor-icons/react) for sharp, tech-appropriate iconography.",
+    "Do NOT use HTML `<select>` or standard `<input type=\"date\">`. Use Shadcn if forms are needed.",
+    "Ensure Header has `backdrop-blur-xl` and `bg-black/60`. No fully transparent headers over scrolling content.",
+    "No emojis anywhere in the UI.",
+    "Ensure the theme is forced to Dark mode."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid the 'AI slop' aesthetic. Make creative, distinctive frontends.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition (e.g., `transition: all`). Always add transitions for specific interactive elements.",
+    "You MUST NOT center align the app container, i.e., do not add `.App { text-align: center; }`.",
+    "Always use modern button styles (sharp or pill) with interaction animations.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "Main agent relies on these image URLs. Missing categories = main agent will use placeholder text which is FORBIDDEN.",
+    "All interactive and key informational elements MUST include a `data-testid` attribute."
+  ]
+}
