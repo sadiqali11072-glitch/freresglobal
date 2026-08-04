@@ -6,18 +6,18 @@ const cols = [
     title: "Company",
     links: [
       { label: "About", href: "#manifesto" },
-      { label: "Services", href: "#services" },
-      { label: "Careers", href: "#contact" },
-      { label: "Press", href: "#contact" },
+      { label: "Solutions", href: "#solutions" },
+      { label: "Brand Partners", href: "#partners" },
+      { label: "Regional Footprint", href: "#footprint" },
     ],
   },
   {
-    title: "Catalogue",
+    title: "Solutions",
     links: [
-      { label: "Laptops", href: "#products" },
-      { label: "Workstations", href: "#products" },
-      { label: "Servers", href: "#products" },
-      { label: "Storage", href: "#products" },
+      { label: "Workstations & Laptops", href: "#solutions" },
+      { label: "POS & Retail", href: "#solutions" },
+      { label: "Storage & Components", href: "#solutions" },
+      { label: "Servers & Datacenter", href: "#solutions" },
     ],
   },
   {
@@ -25,7 +25,7 @@ const cols = [
     links: [
       { label: "sales@freresglobal.com", href: "mailto:sales@freresglobal.com" },
       { label: "support@freresglobal.com", href: "mailto:support@freresglobal.com" },
-      { label: "Amsterdam · Dubai · Lagos", href: "#contact" },
+      { label: "Accra, Ghana · Dubai, UAE", href: "#footprint" },
     ],
   },
 ];
@@ -39,7 +39,14 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <div className="grid md:grid-cols-12 gap-14 mb-24">
           <div className="md:col-span-5">
-            <div className="mono-label mb-6">[ Freres Global Systems ]</div>
+            <div className="flex items-center gap-3 mb-6">
+              <img
+                src="/logo.jpg"
+                alt="Freres Global Systems"
+                className="h-12 w-auto rounded-sm bg-white/95 p-1"
+              />
+              <div className="mono-label">[ Freres Global Systems ]</div>
+            </div>
             <h3 className="font-display text-5xl md:text-7xl tracking-tighter leading-[0.95]">
               Hardware,
               <br />
@@ -47,7 +54,8 @@ export default function Footer() {
             </h3>
             <p className="mt-8 text-zinc-400 max-w-md leading-relaxed">
               An enterprise IT solutions and hardware supply house serving
-              teams that refuse to be a rounding error to a distributor.
+              Ghana, UAE and West Africa — with an integrated Dubai-to-Accra
+              procurement pipeline.
             </p>
           </div>
 
@@ -84,7 +92,7 @@ export default function Footer() {
             freresglobal
           </div>
           <div className="mt-2 flex items-end justify-between">
-            <span className="mono-label">.com — Est. MMXXV</span>
+            <span className="mono-label">.com — Ghana · Dubai · West Africa</span>
             <span className="mono-label hidden md:inline">Freres Global Systems ©</span>
           </div>
         </motion.div>

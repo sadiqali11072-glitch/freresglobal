@@ -9,7 +9,7 @@ const IMG_POS =
 const IMG_STORAGE =
   "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&auto=format&fit=crop&q=80";
 const IMG_SERVERS =
-  "https://images.unsplash.com/photo-1506399309177-3b43e99fead2?w=1600&auto=format&fit=crop&q=80";
+  "https://images.unsplash.com/photo-1601301099413-6c9b7a8a2a55?w=1600&auto=format&fit=crop&q=80";
 
 const ITEMS = [
   {

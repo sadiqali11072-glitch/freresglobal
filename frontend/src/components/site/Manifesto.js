@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 const CHAPTERS = [
   {
     n: "01",
-    title: "We are procurement, engineered.",
+    title: "Procurement, engineered.",
     body:
-      "Freres Global exists because enterprise IT deserves better than a spreadsheet and a distributor. We treat every fleet, every rack and every serial as if it were our own datacenter.",
+      "Freres Global exists because West Africa deserves better than fragmented distribution. We treat every fleet, every rack and every serial as if it were our own datacenter.",
   },
   {
     n: "02",
-    title: "Hardware, made accountable.",
+    title: "Two hubs. One pipeline.",
     body:
-      "From tier-1 OEM to your loading bay — chain of custody, authenticity checks, asset tags and warranty registration handled before we hand you the key.",
+      "Dubai buys, consolidates and stages. Ghana warehouses, supports and delivers. It is the fastest path from a tier-1 OEM to your loading bay anywhere in the region.",
   },
   {
     n: "03",
-    title: "Global. Not generic.",
+    title: "Authorised. Accountable.",
     body:
-      "Warehouses in Rotterdam, Dubai and Lagos. Same-week delivery across EMEA, and next-flight-out for mission-critical parts. Wherever your team lands, we land first.",
+      "Every unit is sourced through authorised OEM channels — Lenovo, Dell, HP, HPE, ASUS, Orderman, Western Digital, SanDisk, Kingston. Authentic, warranty-eligible, tracked to serial.",
   },
   {
     n: "04",
     title: "Systems, not just SKUs.",
     body:
-      "Any vendor can sell you a box. We architect the stack — compute, storage, networking, imaging, deployment — so the tools disappear and the work happens.",
+      "Any distributor can sell a box. We architect the stack — compute, storage, POS, networking, imaging, deployment — so the tools disappear and the work happens.",
   },
 ];
 

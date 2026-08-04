@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Check } from "lucide-react";
@@ -13,12 +13,10 @@ const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const INTERESTS = [
-  { v: "laptops", l: "Laptops" },
-  { v: "workstations", l: "Workstations" },
-  { v: "servers", l: "Servers" },
-  { v: "desktops", l: "Desktops" },
-  { v: "storage", l: "Storage" },
-  { v: "parts", l: "Parts" },
+  { v: "workstations-laptops", l: "Workstations & Laptops" },
+  { v: "pos-retail", l: "POS & Retail Hardware" },
+  { v: "storage-components", l: "Storage & Components" },
+  { v: "servers-datacenter", l: "Servers & Datacenter" },
   { v: "services", l: "IT Services" },
 ];
 
@@ -29,11 +27,27 @@ export default function Contact() {
     name: "",
     email: "",
     company: "",
-    interest: "servers",
+    interest: "workstations-laptops",
     message: "",
   });
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+
+  // Preselect interest chip if url has ?interest=... in the hash (from solution CTAs)
+  useEffect(() => {
+    const parseInterest = () => {
+      const h = window.location.hash || "";
+      const m = h.match(/interest=([a-z-]+)/i);
+      if (!m) return;
+      const val = m[1];
+      if (INTERESTS.some((i) => i.v === val)) {
+        setForm((f) => ({ ...f, interest: val }));
+      }
+    };
+    parseInterest();
+    window.addEventListener("hashchange", parseInterest);
+    return () => window.removeEventListener("hashchange", parseInterest);
+  }, []);
 
   const update = (k) => (e) => setForm({ ...form, [k]: e.target.value });
 
@@ -68,7 +82,7 @@ export default function Contact() {
       }
       setSent(true);
       toast.success("Inquiry received. Our team will respond within one business day.");
-      setForm({ name: "", email: "", company: "", interest: "servers", message: "" });
+      setForm({ name: "", email: "", company: "", interest: "workstations-laptops", message: "" });
     } catch (err) {
       const detail =
         err?.response?.data?.detail ||
@@ -121,9 +135,12 @@ export default function Contact() {
                 </a>
               </div>
               <div>
-                <div className="mono-label mb-2">Offices</div>
+                <div className="mono-label mb-2">Hubs</div>
                 <p className="text-zinc-300 leading-relaxed">
-                  Amsterdam · Dubai · Lagos
+                  Accra, Ghana · Dubai, UAE
+                </p>
+                <p className="text-zinc-500 text-sm mt-1">
+                  Serving Ghana · Nigeria · Ivory Coast · Togo · Benin
                 </p>
               </div>
             </div>

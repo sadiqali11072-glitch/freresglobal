@@ -6,6 +6,7 @@ import Manifesto from "@/components/site/Manifesto";
 import Products from "@/components/site/Products";
 import Services from "@/components/site/Services";
 import Partners from "@/components/site/Partners";
+import Footprint from "@/components/site/Footprint";
 import Contact from "@/components/site/Contact";
 import Footer from "@/components/site/Footer";
 
@@ -19,6 +20,7 @@ export default function Landing() {
       <Products />
       <Services />
       <Partners />
+      <Footprint />
       <Contact />
       <Footer />
     </main>

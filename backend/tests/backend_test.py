@@ -91,3 +91,29 @@ def test_create_inquiry_and_verify_persistence(client):
 def test_list_inquiries_bad_limit(client):
     r = client.get(f"{API}/inquiries?limit=0", timeout=15)
     assert r.status_code == 400
+
+
+# --- New redesign interest slugs ---
+@pytest.mark.parametrize("slug", [
+    "workstations-laptops",
+    "pos-retail",
+    "storage-components",
+    "servers-datacenter",
+])
+def test_inquiry_new_interest_slugs(client, slug):
+    payload = {
+        "name": f"TEST_{slug}",
+        "email": f"test_{slug}@freresglobal-test.com",
+        "company": "TEST Corp",
+        "interest": slug,
+        "message": f"Please quote for {slug} category."
+    }
+    r = client.post(f"{API}/inquiries", json=payload, timeout=15)
+    assert r.status_code == 201, r.text
+    data = r.json()
+    assert data["interest"] == slug
+    assert "id" in data
+    # Verify persistence
+    r2 = client.get(f"{API}/inquiries?limit=100", timeout=15)
+    assert r2.status_code == 200
+    assert any(i["id"] == data["id"] and i["interest"] == slug for i in r2.json())

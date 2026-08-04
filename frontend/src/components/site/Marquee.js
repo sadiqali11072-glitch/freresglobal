@@ -3,11 +3,11 @@ import FastMarquee from "react-fast-marquee";
 
 const WORDS = [
   "Enterprise IT Solutions",
-  "Global Hardware Supplier",
-  "Rack · Configure · Deploy",
-  "Dell · HPE · Lenovo · Apple · NetApp",
-  "Fleet · Servers · Storage",
-  "Serial-tracked. Warranty-backed.",
+  "Ghana · Dubai · West Africa",
+  "Laptops · Workstations · Servers · POS · Storage",
+  "Lenovo · Dell · HP · HPE · ASUS",
+  "Orderman · WD · SanDisk · Kingston",
+  "Authorised. Warranty-backed. Serial-tracked.",
 ];
 
 export default function Marquee() {
