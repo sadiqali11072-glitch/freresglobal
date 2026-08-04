@@ -38,13 +38,13 @@ export default function Nav() {
             className="flex items-center gap-3 group"
           >
             <img
-              src="/logo.jpg"
+              src="/logo.png"
               alt="Freres Global Systems"
-              className="h-10 md:h-12 w-auto rounded-sm bg-white/95 p-1"
+              className="h-14 md:h-16 w-auto"
             />
-            <span className="hidden sm:flex flex-col leading-none">
-              <span className="font-display text-[15px] tracking-tight">Freres Global Systems</span>
-              <span className="mono-label mt-1">Ghana · Dubai</span>
+            <span className="hidden md:flex flex-col leading-none pl-1 border-l border-white/10 ml-1">
+              <span className="mono-label whitespace-nowrap">Ghana · Dubai</span>
+              <span className="mono-label text-zinc-600 mt-1.5 whitespace-nowrap">Est. 2025</span>
             </span>
           </a>
 
@@ -92,7 +92,7 @@ export default function Nav() {
           >
             <div className="flex items-center justify-between px-6 py-5 border-b border-white/5">
               <div className="flex items-center gap-3">
-                <img src="/logo.jpg" alt="Freres Global" className="h-10 w-auto rounded-sm bg-white/95 p-1" />
+                <img src="/logo.png" alt="Freres Global" className="h-11 w-auto" />
                 <span className="font-display text-lg">Freres Global</span>
               </div>
               <button

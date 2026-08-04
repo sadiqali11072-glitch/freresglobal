@@ -41,9 +41,9 @@ export default function Footer() {
           <div className="md:col-span-5">
             <div className="flex items-center gap-3 mb-6">
               <img
-                src="/logo.jpg"
+                src="/logo.png"
                 alt="Freres Global Systems"
-                className="h-12 w-auto rounded-sm bg-white/95 p-1"
+                className="h-14 w-auto"
               />
               <div className="mono-label">[ Freres Global Systems ]</div>
             </div>
