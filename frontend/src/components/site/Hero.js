@@ -4,8 +4,8 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 const LINES = [
   "Enterprise hardware, ",
-  "delivered with ",
-  "surgical precision.",
+  "Dubai to Ghana, ",
+  "shipped without friction.",
 ];
 
 const ease = [0.2, 0.8, 0.2, 1];
@@ -87,7 +87,7 @@ export default function Hero() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
           </span>
-          <span className="mono-label">Currently accepting Q1 fleet orders</span>
+          <span className="mono-label">Currently accepting West Africa fleet orders</span>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -95,7 +95,7 @@ export default function Hero() {
           transition={{ delay: 1.1, duration: 0.8, ease }}
           className="hidden md:block mono-label text-right"
         >
-          Global · HQ Amsterdam / Lagos / Dubai
+          Dual-hub · Accra, Ghana · Dubai, UAE
         </motion.div>
       </div>
 
@@ -106,7 +106,7 @@ export default function Hero() {
       >
         <h1
           data-testid="hero-title"
-          aria-label="Enterprise hardware, delivered with surgical precision."
+          aria-label="Enterprise hardware, Dubai to Ghana, shipped without friction."
           className="font-display text-[13vw] md:text-[9.5vw] lg:text-[8.2vw] font-medium leading-[0.92] tracking-tighter text-white"
         >
           {LINES.map((line, i) => (
@@ -130,9 +130,10 @@ export default function Hero() {
             className="md:col-span-6 lg:col-span-5 text-zinc-400 text-lg leading-relaxed max-w-xl"
             data-testid="hero-subtitle"
           >
-            We source, configure and ship laptops, workstations, servers and
-            storage — for teams that can&apos;t afford downtime, and refuse to
-            settle for generic distribution.
+            We are Ghana&apos;s enterprise IT solutions provider — sourcing
+            laptops, workstations, POS terminals, storage and servers through
+            our Dubai hub and delivering them across West Africa, tracked to
+            serial.
           </motion.p>
 
           <motion.div
@@ -141,8 +142,8 @@ export default function Hero() {
             transition={{ delay: 1.15, duration: 0.9, ease }}
             className="md:col-span-6 lg:col-span-7 flex flex-wrap items-center gap-4 md:justify-end"
           >
-            <a href="#products" data-testid="hero-cta-explore" className="btn-solid">
-              Explore the catalogue <ArrowUpRight size={16} />
+            <a href="#solutions" data-testid="hero-cta-explore" className="btn-solid">
+              Explore the solutions <ArrowUpRight size={16} />
             </a>
             <a href="#contact" data-testid="hero-cta-brief" className="btn-pill">
               Brief our team <ArrowUpRight size={14} />
