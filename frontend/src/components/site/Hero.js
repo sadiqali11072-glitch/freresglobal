@@ -4,8 +4,8 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 const LINES = [
   "Enterprise hardware, ",
-  "Dubai to Ghana, ",
-  "shipped without friction.",
+  "sourced with care, ",
+  "delivered like family.",
 ];
 
 const ease = [0.2, 0.8, 0.2, 1];
@@ -95,7 +95,7 @@ export default function Hero() {
           transition={{ delay: 1.1, duration: 0.8, ease }}
           className="hidden md:block mono-label text-right"
         >
-          Dual-hub · Accra, Ghana · Dubai, UAE
+          Home in Accra, Ghana · Sourcing office in Dubai, UAE
         </motion.div>
       </div>
 
@@ -106,7 +106,7 @@ export default function Hero() {
       >
         <h1
           data-testid="hero-title"
-          aria-label="Enterprise hardware, Dubai to Ghana, shipped without friction."
+          aria-label="Enterprise hardware, sourced with care, delivered like family."
           className="font-display text-[13vw] md:text-[9.5vw] lg:text-[8.2vw] font-medium leading-[0.92] tracking-tighter text-white"
         >
           {LINES.map((line, i) => (
@@ -130,10 +130,10 @@ export default function Hero() {
             className="md:col-span-6 lg:col-span-5 text-zinc-400 text-lg leading-relaxed max-w-xl"
             data-testid="hero-subtitle"
           >
-            We are Ghana&apos;s enterprise IT solutions provider — sourcing
-            laptops, workstations, POS terminals, storage and servers through
-            our Dubai hub and delivering them across West Africa, tracked to
-            serial.
+            We&apos;re a Ghanaian company at heart, with a sourcing office in
+            Dubai — bringing laptops, workstations, POS terminals, storage
+            and servers to West Africa through people who pick up the phone
+            and see every order through to your door.
           </motion.p>
 
           <motion.div

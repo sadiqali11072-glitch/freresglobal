@@ -56,8 +56,9 @@ export default function Services() {
           </div>
           <div className="md:col-span-6 md:col-start-7 flex md:items-end">
             <p className="text-zinc-400 leading-relaxed text-lg max-w-lg">
-              We wrap every shipment in a service layer — because a laptop
-              landing on a desk is a project, not a purchase order.
+              We wrap every shipment in genuine support — because a laptop
+              landing on someone's desk is a project we care about, not just
+              a line on a purchase order.
             </p>
           </div>
         </div>

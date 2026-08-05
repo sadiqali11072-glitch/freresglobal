@@ -4,30 +4,30 @@ import { Plane, Warehouse, Truck, Globe2 } from "lucide-react";
 
 const HUBS = [
   {
-    tag: "Sourcing Hub",
-    city: "Dubai, UAE",
-    coord: "25.2048° N · 55.2708° E",
-    title: "Global procurement & freight consolidation",
-    points: [
-      "Direct vendor relationships with tier-1 OEMs",
-      "Consolidated freight — sea, air and courier",
-      "Bonded warehousing for staging & configuration",
-      "Same-week dispatch to West Africa",
-    ],
-    icon: Plane,
-  },
-  {
-    tag: "In-region Hub",
+    tag: "Home Base · Headquarters",
     city: "Accra, Ghana",
     coord: "5.6037° N · 0.1870° W",
-    title: "In-country stock & technical support",
+    title: "Where we live, warehouse and support our clients",
     points: [
       "Local inventory for immediate release",
       "Ghana-based technical & warranty support",
-      "Custom last-mile delivery across West Africa",
-      "Field engineering on demand",
+      "Personal, last-mile delivery across West Africa",
+      "Field engineering and a team you can call",
     ],
     icon: Warehouse,
+  },
+  {
+    tag: "Sourcing Office",
+    city: "Dubai, UAE",
+    coord: "25.2048° N · 55.2708° E",
+    title: "Our window to the world's leading manufacturers",
+    points: [
+      "Direct vendor relationships with tier-1 OEMs",
+      "Consolidated freight — sea, air and courier",
+      "Staging and configuration before it heads home",
+      "Same-week dispatch back to Ghana",
+    ],
+    icon: Plane,
   },
 ];
 
@@ -50,17 +50,18 @@ export default function Footprint() {
           <div className="md:col-span-5">
             <div className="mono-label mb-6">[ 05 · Regional Footprint ]</div>
             <h2 className="font-display text-4xl md:text-6xl tracking-tighter leading-[0.98]">
-              The Dubai ↔ Ghana
+              Rooted in Ghana,
               <br />
-              <span className="text-zinc-500">strategic corridor.</span>
+              <span className="text-zinc-500">connected to the world.</span>
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex md:items-end">
             <p className="text-zinc-400 leading-relaxed text-lg">
-              Two hubs, one integrated pipeline. Global sourcing power out of
-              Dubai, in-region availability and support out of Ghana — engineered
-              for procurement teams that can&apos;t wait weeks for critical
-              hardware.
+              Accra is home — where our team, our warehouse and our
+              relationships with clients live. Our Dubai office simply gives
+              us a direct line to the world&apos;s best manufacturers, so we
+              can bring that sourcing power back to West Africa quickly and
+              affordably.
             </p>
           </div>
         </div>

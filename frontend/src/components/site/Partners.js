@@ -42,9 +42,10 @@ export default function Partners() {
           </div>
           <div className="md:col-span-6 md:col-start-7 flex md:items-end">
             <p className="text-zinc-400 leading-relaxed text-lg">
-              Direct sourcing relationships with the world&apos;s leading
-              hardware manufacturers — so every unit shipped is authentic,
-              warranty-eligible and backed by manufacturer support.
+              We&apos;ve built real, direct relationships with the world&apos;s
+              leading hardware manufacturers — so every unit we ship to you
+              is authentic, warranty-eligible and backed by proper
+              manufacturer support.
             </p>
           </div>
         </div>

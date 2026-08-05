@@ -53,9 +53,10 @@ export default function Footer() {
               handled.
             </h3>
             <p className="mt-8 text-zinc-400 max-w-md leading-relaxed">
-              An enterprise IT solutions and hardware supply house serving
-              Ghana, UAE and West Africa — with an integrated Dubai-to-Accra
-              procurement pipeline.
+              A Ghanaian enterprise IT solutions and hardware supply house,
+              proudly based in Accra — with a dedicated sourcing office in
+              Dubai bringing the world's best manufacturers within reach of
+              West Africa.
             </p>
           </div>
 

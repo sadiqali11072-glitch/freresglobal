@@ -4,27 +4,27 @@ import { motion } from "framer-motion";
 const CHAPTERS = [
   {
     n: "01",
-    title: "Procurement, engineered.",
+    title: "Built on relationships.",
     body:
-      "Freres Global exists because West Africa deserves better than fragmented distribution. We treat every fleet, every rack and every serial as if it were our own datacenter.",
+      "Freres Global started because West Africa deserved a hardware partner who actually knows your name — not just your PO number. We're a Ghanaian company, and we treat every order, every fleet and every client relationship like it's our own business on the line.",
   },
   {
     n: "02",
-    title: "Two hubs. One pipeline.",
+    title: "Home in Ghana, reaching further.",
     body:
-      "Dubai buys, consolidates and stages. Ghana warehouses, supports and delivers. It is the fastest path from a tier-1 OEM to your loading bay anywhere in the region.",
+      "Accra is where we live, warehouse and support our clients. Our Dubai office is there to open doors to the world's best manufacturers and bring that sourcing power home. It's one team, working for you from both ends.",
   },
   {
     n: "03",
-    title: "Authorised. Accountable.",
+    title: "Honest, every time.",
     body:
-      "Every unit is sourced through authorised OEM channels — Lenovo, Dell, HP, HPE, ASUS, Orderman, Western Digital, SanDisk, Kingston. Authentic, warranty-eligible, tracked to serial.",
+      "Every unit we supply comes through authorised OEM channels — Lenovo, Dell, HP, HPE, ASUS, Orderman, Western Digital, SanDisk, Kingston. Authentic, warranty-eligible, and tracked to serial, so you never have to wonder what you're getting.",
   },
   {
     n: "04",
-    title: "Systems, not just SKUs.",
+    title: "People, not just parts.",
     body:
-      "Any distributor can sell a box. We architect the stack — compute, storage, POS, networking, imaging, deployment — so the tools disappear and the work happens.",
+      "Anyone can sell you a box. We'd rather understand what you're trying to build, then put the right team and the right hardware behind it — so you get a partner who sticks around after the invoice is paid.",
   },
 ];
 

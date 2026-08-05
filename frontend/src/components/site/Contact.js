@@ -117,8 +117,9 @@ export default function Contact() {
               you need to ship.
             </h2>
             <p className="mt-8 text-zinc-400 leading-relaxed max-w-md">
-              Send us a rough spec — fleet size, timeline, region. A senior
-              account architect will scope it and quote within one business day.
+              Send us a rough spec — fleet size, timeline, region — and
+              you'll hear back from a real person on our team, not a ticket
+              queue. We'll scope it and quote within one business day.
             </p>
 
             <div className="mt-14 space-y-6">
@@ -135,9 +136,9 @@ export default function Contact() {
                 </a>
               </div>
               <div>
-                <div className="mono-label mb-2">Hubs</div>
+                <div className="mono-label mb-2">Where we are</div>
                 <p className="text-zinc-300 leading-relaxed">
-                  Accra, Ghana · Dubai, UAE
+                  Accra, Ghana (Home) · Dubai, UAE (Sourcing Office)
                 </p>
                 <p className="text-zinc-500 text-sm mt-1">
                   Serving Ghana · Nigeria · Ivory Coast · Togo · Benin
