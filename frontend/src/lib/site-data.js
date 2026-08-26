@@ -90,9 +90,11 @@ export const PRODUCT_CATEGORIES = [
     blurb:
       "Business laptops, desktops, all-in-ones, enterprise workstations and gaming rigs — sourced by brand and product family, from single units to fleet rollouts.",
     families: [
-      { brand: "Lenovo", lines: ["ThinkPad", "IdeaPad", "Legion"] },
-      { brand: "HP", lines: ["ProBook", "EliteBook", "ZBook", "OmniBook"] },
-      { brand: "Dell", lines: ["Pro", "Pro Plus", "Pro Premium", "Gaming"] },
+      { brand: "Lenovo", lines: ["ThinkPad", "IdeaPad", "Legion (Gaming)", "Commercial models"] },
+      { brand: "HP", lines: ["Notebooks", "ProBook", "EliteBook", "ZBook", "OmniBook", "Gaming"] },
+      { brand: "Dell", lines: ["Dell Pro", "Dell Pro Plus", "Dell Pro Premium", "Dell Gaming"] },
+      { brand: "Acer", lines: ["Notebooks", "Commercial models", "Gaming"] },
+      { brand: "Gaming (all brands)", lines: ["MSI", "Razer", "ASUS", "Acer", "Lenovo", "Dell", "HP"] },
     ],
   },
   {
@@ -104,16 +106,24 @@ export const PRODUCT_CATEGORIES = [
       "Rack and tower servers, enterprise compute and storage arrays — specified and sourced to back-to-back requirements for larger deployments.",
   },
   {
-    slug: "storage-memory",
+    slug: "storage",
     n: "03",
-    title: "Storage & Memory",
-    kicker: "SSD · HDD · Flash · RAM",
+    title: "Storage",
+    kicker: "SSD · HDD · Flash · External",
     blurb:
-      "Enterprise and consumer SSDs, HDDs, external drives, flash storage and memory modules from established manufacturers.",
+      "Enterprise and consumer SSDs, HDDs, external drives and flash storage from established manufacturers.",
+  },
+  {
+    slug: "memory",
+    n: "04",
+    title: "Memory",
+    kicker: "RAM · Memory modules",
+    blurb:
+      "RAM and memory modules for desktops, laptops and servers.",
   },
   {
     slug: "networking",
-    n: "04",
+    n: "05",
     title: "Networking",
     kicker: "Routers · Switches · Wireless",
     blurb:
@@ -121,7 +131,7 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     slug: "security-surveillance",
-    n: "05",
+    n: "06",
     title: "Security & Surveillance",
     kicker: "CCTV · Access control",
     blurb:
@@ -129,29 +139,29 @@ export const PRODUCT_CATEGORIES = [
   },
   {
     slug: "printing",
-    n: "06",
+    n: "07",
     title: "Printing",
     kicker: "Printers · Toner · Consumables",
     blurb:
-      "Office and production printers alongside the toner and consumables to keep them running.",
+      "Office and production printers — including HP, Epson, Canon, Xerox and Ricoh — alongside the toner and consumables to keep them running.",
   },
   {
     slug: "displays",
-    n: "07",
+    n: "08",
     title: "Displays & Monitors",
     kicker: "Business · Professional",
     blurb: "Monitors and displays for desks, meeting rooms and control environments.",
   },
   {
     slug: "accessories-peripherals",
-    n: "08",
+    n: "09",
     title: "Accessories & Peripherals",
     kicker: "Keyboards · Mice · Docks",
     blurb: "The peripherals that finish a workstation or fleet deployment.",
   },
   {
     slug: "software-security",
-    n: "09",
+    n: "10",
     title: "Software & Security Products",
     kicker: "OS · Productivity · Antivirus",
     blurb: "Licensing and security software from Microsoft and established security vendors.",
