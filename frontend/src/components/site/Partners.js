@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { BRAND_GROUPS, ALL_BRANDS } from "@/lib/site-data";
+import { BRAND_GROUPS, ALL_BRANDS, BRAND_LOGOS } from "@/lib/site-data";
 
 // Featured slice of the full brand list — the complete, grouped directory
 // lives on /brands.
@@ -45,21 +45,35 @@ export default function Partners() {
           <div key={group.title} className={gi === 0 ? "" : "mt-14"}>
             <div className="mono-label mb-5 text-zinc-500">{group.title}</div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-white/[0.07]">
-              {group.brands.map((p, i) => (
-                <motion.div
-                  key={p}
-                  data-testid={`partner-${p.toLowerCase().replace(/\s+/g, "-")}`}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.04 }}
-                  className="border-b border-r border-white/[0.07] h-24 md:h-28 flex items-center justify-center px-4 group hover:bg-white/[0.03] transition-colors"
-                >
-                  <span className="font-display text-lg md:text-xl tracking-tight text-zinc-300 group-hover:text-white transition-colors text-center">
-                    {p}
-                  </span>
-                </motion.div>
-              ))}
+              {group.brands.map((p, i) => {
+                const logo = BRAND_LOGOS[p];
+                return (
+                  <motion.div
+                    key={p}
+                    data-testid={`partner-${p.toLowerCase().replace(/\s+/g, "-")}`}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.04 }}
+                    className="border-b border-r border-white/[0.07] h-24 md:h-28 flex items-center justify-center px-4 group hover:bg-white/[0.03] transition-colors"
+                    title={p}
+                  >
+                    {logo ? (
+                      <span className="bg-white rounded-md w-full h-full max-h-16 flex items-center justify-center px-4 py-3 group-hover:scale-[1.03] transition-transform">
+                        <img
+                          src={logo}
+                          alt={`${p} logo`}
+                          className="max-h-8 md:max-h-9 max-w-full object-contain"
+                        />
+                      </span>
+                    ) : (
+                      <span className="font-display text-lg md:text-xl tracking-tight text-zinc-300 group-hover:text-white transition-colors text-center">
+                        {p}
+                      </span>
+                    )}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         ))}
