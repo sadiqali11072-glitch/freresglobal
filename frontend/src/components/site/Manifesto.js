@@ -18,7 +18,7 @@ const CHAPTERS = [
     n: "03",
     title: "Honest, every time.",
     body:
-      "Every unit we supply comes through authorised OEM channels — Lenovo, Dell, HP, HPE, ASUS, Orderman, Western Digital, SanDisk, Kingston. Authentic, warranty-eligible, and tracked to serial, so you never have to wonder what you're getting.",
+      "Every unit we supply comes through authorised OEM channels — Lenovo, Dell, HP, HPE, ASUS, Western Digital, SanDisk, Kingston. Authentic, warranty-eligible, and tracked to serial, so you never have to wonder what you're getting.",
   },
   {
     n: "04",

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const GROUPS = [
   {
     title: "Hardware & Systems",
-    partners: ["Lenovo", "Dell", "HP", "HPE", "ASUS", "Orderman"],
+    partners: ["Lenovo", "Dell", "HP", "HPE", "ASUS"],
   },
   {
     title: "Storage & Memory",
@@ -15,7 +15,7 @@ const GROUPS = [
 ];
 
 const STATS = [
-  { k: "9+", v: "Authorised OEM partners" },
+  { k: "8+", v: "Authorised OEM partners" },
   { k: "2", v: "Regional hubs · Ghana + Dubai" },
   { k: "24h", v: "Quote turnaround" },
   { k: "100%", v: "Authentic, warranty-eligible units" },

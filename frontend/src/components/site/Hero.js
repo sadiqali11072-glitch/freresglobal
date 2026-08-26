@@ -131,9 +131,9 @@ export default function Hero() {
             data-testid="hero-subtitle"
           >
             We&apos;re a Ghanaian company at heart, with a sourcing office in
-            Dubai — bringing laptops, workstations, POS terminals, storage
-            and servers to West Africa through people who pick up the phone
-            and see every order through to your door.
+            Dubai — bringing laptops, workstations, storage and servers to
+            West Africa through people who pick up the phone and see every
+            order through to your door.
           </motion.p>
 
           <motion.div

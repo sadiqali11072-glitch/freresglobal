@@ -15,7 +15,6 @@ const cols = [
     title: "Solutions",
     links: [
       { label: "Workstations & Laptops", href: "#solutions" },
-      { label: "POS & Retail", href: "#solutions" },
       { label: "Storage & Components", href: "#solutions" },
       { label: "Servers & Datacenter", href: "#solutions" },
     ],

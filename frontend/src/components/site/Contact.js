@@ -14,7 +14,6 @@ const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
 const INTERESTS = [
   { v: "workstations-laptops", l: "Workstations & Laptops" },
-  { v: "pos-retail", l: "POS & Retail Hardware" },
   { v: "storage-components", l: "Storage & Components" },
   { v: "servers-datacenter", l: "Servers & Datacenter" },
   { v: "services", l: "IT Services" },

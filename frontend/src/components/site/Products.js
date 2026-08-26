@@ -1,11 +1,9 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Server, Laptop, HardDrive, CreditCard } from "lucide-react";
+import { ArrowUpRight, Server, Laptop, HardDrive } from "lucide-react";
 
 const IMG_WORKSTATIONS =
   "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=1600&auto=format&fit=crop&q=80";
-const IMG_POS =
-  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1600&auto=format&fit=crop&q=80";
 const IMG_STORAGE =
   "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&auto=format&fit=crop&q=80";
 const IMG_SERVERS =
@@ -22,23 +20,11 @@ const ITEMS = [
       "Business laptops, desktops, power workstations and enterprise tablets — deployed at scale across Ghana and West Africa.",
     tags: ["Lenovo", "Dell", "HP", "ASUS"],
     img: IMG_WORKSTATIONS,
-    className: "md:col-span-7 md:row-span-2 aspect-[16/13] md:aspect-auto md:min-h-[520px]",
-  },
-  {
-    slug: "pos-retail",
-    n: "02",
-    icon: CreditCard,
-    title: "POS & Retail Hardware",
-    kicker: "Hospitality · Retail · QSR",
-    blurb:
-      "Orderman handheld POS, all-in-one terminals and receipt hardware — engineered for high-volume hospitality and retail floors.",
-    tags: ["Orderman"],
-    img: IMG_POS,
-    className: "md:col-span-5 aspect-[4/3] md:min-h-[250px]",
+    className: "md:col-span-6 aspect-[4/3] md:min-h-[420px]",
   },
   {
     slug: "storage-components",
-    n: "03",
+    n: "02",
     icon: HardDrive,
     title: "Data Storage & Component Solutions",
     kicker: "Drives · Memory · Parts",
@@ -46,11 +32,11 @@ const ITEMS = [
       "Bulk enterprise SSDs, HDDs, memory modules and replacement components sourced authentic and tracked to serial.",
     tags: ["Western Digital", "SanDisk", "Kingston"],
     img: IMG_STORAGE,
-    className: "md:col-span-5 aspect-[4/3] md:min-h-[250px]",
+    className: "md:col-span-6 aspect-[4/3] md:min-h-[420px]",
   },
   {
     slug: "servers-datacenter",
-    n: "04",
+    n: "03",
     icon: Server,
     title: "Server & Data Center Infrastructure",
     kicker: "Compute · Rack · Network",
@@ -146,13 +132,13 @@ export default function Products() {
           <div>
             <div className="mono-label mb-6">[ 03 · Solutions ]</div>
             <h2 className="font-display text-4xl md:text-6xl tracking-tighter leading-[0.98]">
-              Four solution pillars.
+              Three solution pillars.
               <br />
               <span className="text-zinc-500">Every category, procurement-grade.</span>
             </h2>
           </div>
           <p className="max-w-md text-zinc-400 leading-relaxed">
-            From single-site POS rollouts to multi-rack datacenter builds — sourced
+            From single-workstation rollouts to multi-rack datacenter builds — sourced
             through authorised OEM channels, staged in Dubai, delivered in-region
             from Ghana.
           </p>

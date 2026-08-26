@@ -4,9 +4,9 @@ import FastMarquee from "react-fast-marquee";
 const WORDS = [
   "Enterprise IT Solutions",
   "Ghana · Dubai · West Africa",
-  "Laptops · Workstations · Servers · POS · Storage",
+  "Laptops · Workstations · Servers · Storage",
   "Lenovo · Dell · HP · HPE · ASUS",
-  "Orderman · WD · SanDisk · Kingston",
+  "WD · SanDisk · Kingston",
   "Authorised. Warranty-backed. Serial-tracked.",
 ];
 
