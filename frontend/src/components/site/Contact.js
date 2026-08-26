@@ -126,6 +126,20 @@ export default function Contact() {
                   </a>
                 ))}
               </div>
+              {CONTACT.whatsapp && (
+                <div>
+                  <div className="mono-label mb-2">WhatsApp</div>
+                  <a
+                    href={CONTACT.whatsapp.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    data-testid="whatsapp-link"
+                    className="btn-pill w-fit"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
+              )}
               <div>
                 <div className="mono-label mb-2">Where we are</div>
                 <p className="text-zinc-300 leading-relaxed">

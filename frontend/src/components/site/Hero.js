@@ -144,8 +144,8 @@ export default function Hero() {
             transition={{ delay: 1.15, duration: 0.9, ease }}
             className="md:col-span-6 lg:col-span-7 flex flex-wrap items-center gap-4 md:justify-end"
           >
-            <Link to="/solutions" data-testid="hero-cta-explore" className="btn-solid">
-              Explore the solutions <ArrowUpRight size={16} />
+            <Link to="/products" data-testid="hero-cta-explore" className="btn-solid">
+              Explore products <ArrowUpRight size={16} />
             </Link>
             <Link to="/request-a-quote" data-testid="hero-cta-brief" className="btn-pill">
               Request a quote <ArrowUpRight size={14} />

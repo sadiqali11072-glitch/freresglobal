@@ -72,6 +72,17 @@ export default function Footer() {
                   {p.number}
                 </a>
               ))}
+              {CONTACT.whatsapp && (
+                <a
+                  href={CONTACT.whatsapp.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-testid="footer-whatsapp"
+                  className="ul-link text-[15px] block w-fit"
+                >
+                  WhatsApp
+                </a>
+              )}
             </div>
           </div>
 
