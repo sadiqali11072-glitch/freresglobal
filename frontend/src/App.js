@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@/components/site/Layout";
 import Home from "@/pages/Home";
 import ProductsPage from "@/pages/ProductsPage";
+import CategoryProductsPage from "@/pages/CategoryProductsPage";
+import ProductDetailPage from "@/pages/ProductDetailPage";
 import BrandsPage from "@/pages/BrandsPage";
 import SolutionsPage from "@/pages/SolutionsPage";
 import AboutPage from "@/pages/AboutPage";
@@ -63,6 +65,8 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:categorySlug" element={<CategoryProductsPage />} />
+            <Route path="/products/:categorySlug/:productSlug" element={<ProductDetailPage />} />
             <Route path="/brands" element={<BrandsPage />} />
             <Route path="/solutions" element={<SolutionsPage />} />
             <Route path="/about" element={<AboutPage />} />
