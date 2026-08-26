@@ -9,6 +9,9 @@ export const CONTACT = {
     { label: "Ghana", number: "+233 256 599 885", href: "tel:+233256599885" },
     { label: "Ghana", number: "+233 271 642 772", href: "tel:+233271642772" },
   ],
+  // Click-to-chat using the primary confirmed number above — same number,
+  // different channel, not a new contact detail.
+  whatsapp: { number: "+233 256 599 885", href: "https://wa.me/233256599885" },
   locations: [
     { label: "Home base", value: "Accra, Ghana" },
     { label: "Sourcing office", value: "Dubai, UAE" },
