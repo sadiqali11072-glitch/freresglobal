@@ -77,6 +77,41 @@ export const BRAND_GROUPS = [
 
 export const ALL_BRANDS = BRAND_GROUPS.flatMap((g) => g.brands);
 
+// Real brand logos (official marks, sourced from open, redistributable
+// icon sets — not fabricated). Only brands with a verified logo file are
+// listed here; any brand missing from this map falls back to a clean
+// text treatment on the Brands page rather than showing a wrong or
+// placeholder logo.
+export const BRAND_LOGOS = {
+  Lenovo: "/brands/lenovo.svg",
+  Dell: "/brands/dell.svg",
+  HP: "/brands/hp.svg",
+  Apple: "/brands/apple.svg",
+  Acer: "/brands/acer.svg",
+  ASUS: "/brands/asus.svg",
+  MSI: "/brands/msi.svg",
+  Razer: "/brands/razer.svg",
+  Seagate: "/brands/seagate.svg",
+  Kingston: "/brands/kingston.svg",
+  "Western Digital": "/brands/westerndigital.svg",
+  Cisco: "/brands/cisco.svg",
+  Huawei: "/brands/huawei.svg",
+  "D-Link": "/brands/dlink.svg",
+  "TP-Link": "/brands/tplink.svg",
+  Ubiquiti: "/brands/ubiquiti.svg",
+  Tenda: "/brands/tenda.svg",
+  Hikvision: "/brands/hikvision.svg",
+  NVIDIA: "/brands/nvidia.svg",
+  AMD: "/brands/amd.svg",
+  Intel: "/brands/intel.svg",
+  Samsung: "/brands/samsung.svg",
+  Logitech: "/brands/logitech.svg",
+  Epson: "/brands/epson.svg",
+  Microsoft: "/brands/microsoft.svg",
+  Kaspersky: "/brands/kaspersky.svg",
+  Norton: "/brands/norton.svg",
+};
+
 // Product categories — architecture built to expand. Laptops/desktops
 // follow a Brand → Product Family → Model → Quote/Buy discovery pattern
 // once real catalog data is loaded; for now each category links through
