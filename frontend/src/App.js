@@ -1,7 +1,19 @@
 import { useEffect } from "react";
 import "@/App.css";
 import Lenis from "lenis";
-import Landing from "@/pages/Landing";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "@/components/site/Layout";
+import Home from "@/pages/Home";
+import ProductsPage from "@/pages/ProductsPage";
+import BrandsPage from "@/pages/BrandsPage";
+import SolutionsPage from "@/pages/SolutionsPage";
+import AboutPage from "@/pages/AboutPage";
+import GlobalSourcingPage from "@/pages/GlobalSourcingPage";
+import ContactPage from "@/pages/ContactPage";
+import RequestQuotePage from "@/pages/RequestQuotePage";
+import DealersPage from "@/pages/DealersPage";
+import GovernmentPage from "@/pages/GovernmentPage";
+import NotFoundPage from "@/pages/NotFoundPage";
 import { Toaster } from "@/components/ui/sonner";
 
 function App() {
@@ -17,7 +29,7 @@ function App() {
     });
     window.__lenis = lenis;
 
-    // Smooth anchor scroll
+    // Smooth anchor scroll (in-page hashes only)
     const onAnchorClick = (e) => {
       const a = e.target.closest && e.target.closest('a[href^="#"]');
       if (!a) return;
@@ -46,7 +58,23 @@ function App() {
 
   return (
     <div className="App" data-testid="app-root">
-      <Landing />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/brands" element={<BrandsPage />} />
+            <Route path="/solutions" element={<SolutionsPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/global-sourcing" element={<GlobalSourcingPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/request-a-quote" element={<RequestQuotePage />} />
+            <Route path="/dealers" element={<DealersPage />} />
+            <Route path="/government" element={<GovernmentPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
       <Toaster richColors position="bottom-right" theme="dark" />
     </div>
   );

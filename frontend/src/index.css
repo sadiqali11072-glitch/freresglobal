@@ -11,7 +11,11 @@
     --border: rgba(255, 255, 255, 0.08);
     --text: #ffffff;
     --muted: #A1A1AA;
-    --accent: #007AFF;
+    /* Brand accents, sampled from the Freres Global mark */
+    --accent: #2F8FFC;
+    --brand-blue: #2F8FFC;
+    --brand-green: #6CC000;
+    --brand-gold: #F0CC00;
 }
 
 * {
@@ -32,7 +36,8 @@ body {
 
 body {
     background-image:
-        radial-gradient(1200px 800px at 80% -10%, rgba(0, 122, 255, 0.08), transparent 60%),
+        radial-gradient(1200px 800px at 80% -10%, rgba(47, 143, 252, 0.09), transparent 60%),
+        radial-gradient(700px 500px at 100% 40%, rgba(108, 192, 0, 0.05), transparent 60%),
         radial-gradient(900px 600px at -10% 30%, rgba(255, 255, 255, 0.03), transparent 60%);
     background-attachment: fixed;
 }
@@ -281,6 +286,60 @@ body::before {
 
 .field:focus {
     border-bottom-color: #ffffff;
+}
+
+/* Nav route link — active state */
+.nav-link-active {
+    color: #ffffff !important;
+}
+
+.nav-link-active::after {
+    transform: scaleX(1) !important;
+    transform-origin: left !important;
+}
+
+/* Tri-colour accent chip, used sparingly for brand-colour touches */
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: #d4d4d8;
+}
+
+.chip-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    flex-shrink: 0;
+}
+
+.text-brand-blue { color: var(--brand-blue); }
+.text-brand-green { color: var(--brand-green); }
+.text-brand-gold { color: var(--brand-gold); }
+.bg-brand-blue { background: var(--brand-blue); }
+.bg-brand-green { background: var(--brand-green); }
+.bg-brand-gold { background: var(--brand-gold); }
+
+/* Select (native) styled to match .field */
+select.field {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8'><path d='M1 1l5 5 5-5' stroke='%23a1a1aa' stroke-width='1.4' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 2px center;
+    padding-right: 20px;
+}
+
+select.field option {
+    background: #0A0A0A;
+    color: #ffffff;
 }
 
 /* Reduced motion */
