@@ -55,13 +55,22 @@ export default function ProductsPage() {
                   )}
                 </div>
 
-                <Link
-                  to={`/request-a-quote?interest=${c.slug}`}
-                  data-testid={`quote-${c.slug}`}
-                  className="btn-solid shrink-0"
-                >
-                  Request a quote <ArrowUpRight size={16} />
-                </Link>
+                <div className="flex flex-col gap-3 shrink-0">
+                  <Link
+                    to={`/products/${c.slug}`}
+                    data-testid={`browse-${c.slug}`}
+                    className="btn-pill"
+                  >
+                    Browse models <ArrowUpRight size={14} />
+                  </Link>
+                  <Link
+                    to={`/request-a-quote?interest=${c.slug}`}
+                    data-testid={`quote-${c.slug}`}
+                    className="btn-solid"
+                  >
+                    Request a quote <ArrowUpRight size={16} />
+                  </Link>
+                </div>
               </div>
             </motion.article>
           ))}
