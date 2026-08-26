@@ -1,24 +1,16 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import { BRAND_GROUPS, ALL_BRANDS } from "@/lib/site-data";
 
-// Grouped brand partners. Logos are rendered as clean wordmarks for a
-// consistent, high-trust grid (no mismatched image logos).
-const GROUPS = [
-  {
-    title: "Hardware & Systems",
-    partners: ["Lenovo", "Dell", "HP", "HPE", "ASUS"],
-  },
-  {
-    title: "Storage & Memory",
-    partners: ["Western Digital", "SanDisk", "Kingston"],
-  },
-];
+// Featured slice of the full brand list — the complete, grouped directory
+// lives on /brands.
+const FEATURED_GROUPS = BRAND_GROUPS.slice(0, 2);
 
 const STATS = [
-  { k: "8+", v: "Authorised OEM partners" },
+  { k: `${ALL_BRANDS.length}+`, v: "Brands we supply" },
   { k: "2", v: "Regional hubs · Ghana + Dubai" },
-  { k: "24h", v: "Quote turnaround" },
-  { k: "100%", v: "Authentic, warranty-eligible units" },
 ];
 
 const ease = [0.2, 0.8, 0.2, 1];
@@ -33,28 +25,27 @@ export default function Partners() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <div className="grid md:grid-cols-12 gap-10 mb-14 md:mb-20">
           <div className="md:col-span-5">
-            <div className="mono-label mb-6">[ 04 · Brand Partners ]</div>
+            <div className="mono-label mb-6">[ 06 · Brands ]</div>
             <h2 className="font-display text-4xl md:text-5xl tracking-tighter leading-[0.98]">
-              Authorised across the
+              Brands we
               <br />
-              <span className="text-zinc-500">tier-1 stack.</span>
+              <span className="text-zinc-500">supply, and keep expanding.</span>
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 flex md:items-end">
             <p className="text-zinc-400 leading-relaxed text-lg">
-              We&apos;ve built real, direct relationships with the world&apos;s
-              leading hardware manufacturers — so every unit we ship to you
-              is authentic, warranty-eligible and backed by proper
-              manufacturer support.
+              Whatever the technology requirement, we can probably supply
+              it — sourced across the world&apos;s leading hardware and
+              software manufacturers.
             </p>
           </div>
         </div>
 
-        {GROUPS.map((group, gi) => (
+        {FEATURED_GROUPS.map((group, gi) => (
           <div key={group.title} className={gi === 0 ? "" : "mt-14"}>
             <div className="mono-label mb-5 text-zinc-500">{group.title}</div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 border-t border-l border-white/[0.07]">
-              {group.partners.map((p, i) => (
+              {group.brands.map((p, i) => (
                 <motion.div
                   key={p}
                   data-testid={`partner-${p.toLowerCase().replace(/\s+/g, "-")}`}
@@ -73,11 +64,16 @@ export default function Partners() {
           </div>
         ))}
 
-        <p className="mt-10 text-center md:text-left text-zinc-400 max-w-2xl">
-          Authorised sourcing and deployment across{" "}
-          <span className="text-white">Ghana</span>,{" "}
-          <span className="text-white">UAE</span> and West Africa.
-        </p>
+        <div className="mt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+          <p className="text-zinc-400 max-w-2xl">
+            Sourcing and deployment across{" "}
+            <span className="text-white">Ghana</span>,{" "}
+            <span className="text-white">UAE</span> and West Africa.
+          </p>
+          <Link to="/brands" data-testid="partners-view-all" className="btn-pill w-fit">
+            View all brands <ArrowUpRight size={14} />
+          </Link>
+        </div>
 
         <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 border-t border-white/[0.07] pt-14">
           {STATS.map((s, i) => (

@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { Link } from "react-router-dom";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 const LINES = [
-  "Enterprise hardware, ",
-  "sourced with care, ",
-  "delivered like family.",
+  "One partner. ",
+  "Multiple technology ",
+  "solutions.",
 ];
 
 const ease = [0.2, 0.8, 0.2, 1];
@@ -106,7 +107,7 @@ export default function Hero() {
       >
         <h1
           data-testid="hero-title"
-          aria-label="Enterprise hardware, sourced with care, delivered like family."
+          aria-label="One partner. Multiple technology solutions."
           className="font-display text-[13vw] md:text-[9.5vw] lg:text-[8.2vw] font-medium leading-[0.92] tracking-tighter text-white"
         >
           {LINES.map((line, i) => (
@@ -130,10 +131,11 @@ export default function Hero() {
             className="md:col-span-6 lg:col-span-5 text-zinc-400 text-lg leading-relaxed max-w-xl"
             data-testid="hero-subtitle"
           >
-            We&apos;re a Ghanaian company at heart, with a sourcing office in
-            Dubai — bringing laptops, workstations, storage and servers to
-            West Africa through people who pick up the phone and see every
-            order through to your door.
+            We&apos;re a Ghanaian technology hardware supplier at heart, with
+            a sourcing office in Dubai — whatever the technology
+            requirement, from a single laptop to a data centre build, we can
+            probably supply it. In-stock for what's ready now, sourced
+            back-to-back for what isn't.
           </motion.p>
 
           <motion.div
@@ -142,12 +144,12 @@ export default function Hero() {
             transition={{ delay: 1.15, duration: 0.9, ease }}
             className="md:col-span-6 lg:col-span-7 flex flex-wrap items-center gap-4 md:justify-end"
           >
-            <a href="#solutions" data-testid="hero-cta-explore" className="btn-solid">
+            <Link to="/solutions" data-testid="hero-cta-explore" className="btn-solid">
               Explore the solutions <ArrowUpRight size={16} />
-            </a>
-            <a href="#contact" data-testid="hero-cta-brief" className="btn-pill">
-              Brief our team <ArrowUpRight size={14} />
-            </a>
+            </Link>
+            <Link to="/request-a-quote" data-testid="hero-cta-brief" className="btn-pill">
+              Request a quote <ArrowUpRight size={14} />
+            </Link>
           </motion.div>
         </div>
 

@@ -2,12 +2,12 @@ import React from "react";
 import FastMarquee from "react-fast-marquee";
 
 const WORDS = [
-  "Enterprise IT Solutions",
+  "One Partner. Multiple Technology Solutions.",
   "Ghana · Dubai · West Africa",
-  "Laptops · Workstations · Servers · Storage",
-  "Lenovo · Dell · HP · HPE · ASUS",
-  "WD · SanDisk · Kingston",
-  "Authorised. Warranty-backed. Serial-tracked.",
+  "Computing · Servers · Storage · Networking",
+  "In-Stock supply. Back-to-Back sourcing.",
+  "Lenovo · Dell · HP · ASUS · Cisco · Samsung",
+  "Corporate. Government. Institutions. Dealers.",
 ];
 
 export default function Marquee() {

@@ -1,30 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { CONTACT } from "@/lib/site-data";
 
 const cols = [
   {
     title: "Company",
     links: [
-      { label: "About", href: "#manifesto" },
-      { label: "Solutions", href: "#solutions" },
-      { label: "Brand Partners", href: "#partners" },
-      { label: "Regional Footprint", href: "#footprint" },
+      { label: "About", to: "/about" },
+      { label: "Solutions", to: "/solutions" },
+      { label: "Brands we supply", to: "/brands" },
+      { label: "Global Sourcing", to: "/global-sourcing" },
     ],
   },
   {
-    title: "Solutions",
+    title: "Products",
     links: [
-      { label: "Workstations & Laptops", href: "#solutions" },
-      { label: "Storage & Components", href: "#solutions" },
-      { label: "Servers & Datacenter", href: "#solutions" },
+      { label: "Computing", to: "/products#computing" },
+      { label: "Servers & Enterprise Compute", to: "/products#servers-enterprise-compute" },
+      { label: "Storage & Memory", to: "/products#storage-memory" },
+      { label: "Networking", to: "/products#networking" },
+      { label: "All categories", to: "/products" },
     ],
   },
   {
-    title: "Contact",
+    title: "Work with us",
     links: [
-      { label: "sales@freresglobal.com", href: "mailto:sales@freresglobal.com" },
-      { label: "support@freresglobal.com", href: "mailto:support@freresglobal.com" },
-      { label: "Accra, Ghana · Dubai, UAE", href: "#footprint" },
+      { label: "Request a Quote", to: "/request-a-quote" },
+      { label: "Dealers & Resellers", to: "/dealers" },
+      { label: "Government & Institutions", to: "/government" },
+      { label: "Contact", to: "/contact" },
     ],
   },
 ];
@@ -37,7 +42,7 @@ export default function Footer() {
     >
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <div className="grid md:grid-cols-12 gap-14 mb-24">
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <div className="flex items-center gap-3 mb-6">
               <img
                 src="/logo.png"
@@ -46,17 +51,28 @@ export default function Footer() {
               />
               <div className="mono-label">[ Freres Global Systems ]</div>
             </div>
-            <h3 className="font-display text-5xl md:text-7xl tracking-tighter leading-[0.95]">
-              Hardware,
+            <h3 className="font-display text-4xl md:text-5xl tracking-tighter leading-[0.95]">
+              One partner.
               <br />
-              handled.
+              Multiple solutions.
             </h3>
             <p className="mt-8 text-zinc-400 max-w-md leading-relaxed">
-              A Ghanaian enterprise IT solutions and hardware supply house,
-              proudly based in Accra — with a dedicated sourcing office in
-              Dubai bringing the world's best manufacturers within reach of
-              West Africa.
+              A Ghanaian technology hardware supply and sourcing partner,
+              based in Accra — with a sourcing office in Dubai bringing
+              global manufacturers within reach of West Africa.
             </p>
+            <div className="mt-8 space-y-2">
+              {CONTACT.phones.map((p) => (
+                <a
+                  key={p.number}
+                  href={p.href}
+                  data-testid={`footer-phone-${p.number.replace(/[^0-9]/g, "")}`}
+                  className="ul-link text-[15px] block w-fit"
+                >
+                  {p.number}
+                </a>
+              ))}
+            </div>
           </div>
 
           {cols.map((c) => (
@@ -65,13 +81,13 @@ export default function Footer() {
               <ul className="space-y-3">
                 {c.links.map((l) => (
                   <li key={l.label}>
-                    <a
-                      href={l.href}
+                    <Link
+                      to={l.to}
                       className="ul-link text-[15px]"
                       data-testid={`footer-link-${l.label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
                     >
                       {l.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -102,14 +118,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Freres Global Systems. All rights reserved.
           </span>
           <div className="flex items-center gap-6">
-            <a href="#" className="ul-link text-[13px]" data-testid="footer-privacy">Privacy</a>
-            <a href="#" className="ul-link text-[13px]" data-testid="footer-terms">Terms</a>
-            <a href="#" className="ul-link text-[13px]" data-testid="footer-status">
-              <span className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full inline-block" />
-                All systems operational
-              </span>
-            </a>
+            <span className="mono-label">Accra, Ghana · Dubai, UAE</span>
           </div>
         </div>
       </div>

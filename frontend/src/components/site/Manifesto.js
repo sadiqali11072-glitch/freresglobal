@@ -16,9 +16,9 @@ const CHAPTERS = [
   },
   {
     n: "03",
-    title: "Honest, every time.",
+    title: "One partner, not a computer shop.",
     body:
-      "Every unit we supply comes through authorised OEM channels — Lenovo, Dell, HP, HPE, ASUS, Western Digital, SanDisk, Kingston. Authentic, warranty-eligible, and tracked to serial, so you never have to wonder what you're getting.",
+      "We work across 40+ brands and every major hardware category — so instead of chasing down a different supplier for every requirement, you bring it to us. In-stock for what's ready now, sourced back-to-back through our Dubai office for what has to be found specifically for you.",
   },
   {
     n: "04",

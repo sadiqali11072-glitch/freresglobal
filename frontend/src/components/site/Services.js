@@ -1,37 +1,38 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Boxes, ServerCog, ShieldCheck, Truck, Wrench, Globe2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Boxes, ServerCog, FileSearch, Wrench, Globe2, Handshake, ArrowUpRight } from "lucide-react";
 
 const SERVICES = [
   {
     icon: Boxes,
     title: "Fleet Procurement",
-    body: "Sourcing, imaging, tagging and staging for company-wide device rollouts — from 20 seats to 20,000.",
+    body: "Sourcing for company-wide device rollouts — computing, storage and everything a fleet needs, quoted as one request.",
   },
   {
     icon: ServerCog,
-    title: "Server & Rack Build",
-    body: "Custom-spec compute, storage and networking racks — pre-cabled, pre-tested, delivered burn-in ready.",
+    title: "Server & Infrastructure Builds",
+    body: "Rack and enterprise compute specified and sourced back-to-back to the project's exact requirement.",
   },
   {
-    icon: ShieldCheck,
-    title: "Warranty & Care",
-    body: "OEM warranty registration, on-site swap agreements and 4-hour critical-parts SLAs.",
-  },
-  {
-    icon: Truck,
-    title: "Global Logistics",
-    body: "Bonded warehousing, customs clearance and next-flight-out for spares across EMEA and Africa.",
+    icon: FileSearch,
+    title: "In-Stock or Back-to-Back",
+    body: "Two ways to buy: what's ready now, or sourced specifically for you through our Dubai office.",
   },
   {
     icon: Wrench,
-    title: "Configuration Lab",
-    body: "BIOS, imaging, encryption, MDM enrolment — devices arrive login-ready for your engineers.",
+    title: "Multi-Line Quoting",
+    body: "One Request a Quote can carry several products and models — we scope and price it as a single order.",
   },
   {
     icon: Globe2,
-    title: "IT Solutions Advisory",
-    body: "Vendor-neutral architecture, refresh planning and lifecycle cost modelling for CIOs.",
+    title: "Global Sourcing",
+    body: "A Ghana team backed by a Dubai sourcing office, for reach beyond what's on the shelf locally.",
+  },
+  {
+    icon: Handshake,
+    title: "Procurement-Grade Process",
+    body: "Built for corporate, government and institutional buyers — not just a checkout page.",
   },
 ];
 
@@ -47,7 +48,7 @@ export default function Services() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <div className="grid md:grid-cols-12 gap-10 mb-16 md:mb-24">
           <div className="md:col-span-5">
-            <div className="mono-label mb-6">[ 04 · Services ]</div>
+            <div className="mono-label mb-6">[ 05 · How we work ]</div>
             <h2 className="font-display text-4xl md:text-6xl tracking-tighter leading-[0.98]">
               What we handle,
               <br />
@@ -56,9 +57,9 @@ export default function Services() {
           </div>
           <div className="md:col-span-6 md:col-start-7 flex md:items-end">
             <p className="text-zinc-400 leading-relaxed text-lg max-w-lg">
-              We wrap every shipment in genuine support — because a laptop
-              landing on someone's desk is a project we care about, not just
-              a line on a purchase order.
+              A laptop landing on someone's desk, or a server rack going
+              live, is a project we care about — not just a line on a
+              purchase order.
             </p>
           </div>
         </div>
@@ -93,6 +94,12 @@ export default function Services() {
               </motion.div>
             );
           })}
+        </div>
+
+        <div className="mt-14">
+          <Link to="/solutions" data-testid="services-view-solutions" className="btn-pill w-fit">
+            See solutions by business need <ArrowUpRight size={14} />
+          </Link>
         </div>
       </div>
     </section>

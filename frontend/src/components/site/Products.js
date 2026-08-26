@@ -1,6 +1,10 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Server, Laptop, HardDrive } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Server, Laptop, HardDrive, Wifi } from "lucide-react";
+import { PRODUCT_CATEGORIES } from "@/lib/site-data";
+
+const ICONS = { computing: Laptop, "storage-memory": HardDrive, "servers-enterprise-compute": Server, networking: Wifi };
 
 const IMG_WORKSTATIONS =
   "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=1600&auto=format&fit=crop&q=80";
@@ -8,45 +12,18 @@ const IMG_STORAGE =
   "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&auto=format&fit=crop&q=80";
 const IMG_SERVERS =
   "https://images.unsplash.com/photo-1601301099413-6c9b7a8a2a55?w=1600&auto=format&fit=crop&q=80";
+const IMAGES = { computing: IMG_WORKSTATIONS, "storage-memory": IMG_STORAGE, "servers-enterprise-compute": IMG_SERVERS };
 
-const ITEMS = [
-  {
-    slug: "workstations-laptops",
-    n: "01",
-    icon: Laptop,
-    title: "Enterprise Workstations & Laptops",
-    kicker: "Business-grade fleet",
-    blurb:
-      "Business laptops, desktops, power workstations and enterprise tablets — deployed at scale across Ghana and West Africa.",
-    tags: ["Lenovo", "Dell", "HP", "ASUS"],
-    img: IMG_WORKSTATIONS,
-    className: "md:col-span-6 aspect-[4/3] md:min-h-[420px]",
-  },
-  {
-    slug: "storage-components",
-    n: "02",
-    icon: HardDrive,
-    title: "Data Storage & Component Solutions",
-    kicker: "Drives · Memory · Parts",
-    blurb:
-      "Bulk enterprise SSDs, HDDs, memory modules and replacement components sourced authentic and tracked to serial.",
-    tags: ["Western Digital", "SanDisk", "Kingston"],
-    img: IMG_STORAGE,
-    className: "md:col-span-6 aspect-[4/3] md:min-h-[420px]",
-  },
-  {
-    slug: "servers-datacenter",
-    n: "03",
-    icon: Server,
-    title: "Server & Data Center Infrastructure",
-    kicker: "Compute · Rack · Network",
-    blurb:
-      "Rack servers, enterprise compute, storage arrays and networking hardware — configured, cabled and delivered ready-to-power.",
-    tags: ["Dell PowerEdge", "HPE ProLiant", "Lenovo ThinkSystem"],
-    img: IMG_SERVERS,
-    className: "md:col-span-12 aspect-[16/8] md:aspect-auto md:min-h-[420px]",
-  },
-];
+const FEATURED_SLUGS = ["computing", "storage-memory", "servers-enterprise-compute"];
+const ITEMS = PRODUCT_CATEGORIES.filter((c) => FEATURED_SLUGS.includes(c.slug)).map((c, i) => ({
+  ...c,
+  icon: ICONS[c.slug],
+  img: IMAGES[c.slug],
+  className:
+    c.slug === "servers-enterprise-compute"
+      ? "md:col-span-12 aspect-[16/8] md:aspect-auto md:min-h-[420px]"
+      : "md:col-span-6 aspect-[4/3] md:min-h-[420px]",
+}));
 
 const ease = [0.2, 0.8, 0.2, 1];
 
@@ -85,7 +62,7 @@ function Card({ item, index }) {
           <span className="mono-label text-zinc-200">
             {item.n} / {item.kicker}
           </span>
-          <Icon size={22} strokeWidth={1.4} className="text-white/85" />
+          {Icon && <Icon size={22} strokeWidth={1.4} className="text-white/85" />}
         </div>
 
         <div>
@@ -96,24 +73,13 @@ function Card({ item, index }) {
             {item.blurb}
           </p>
 
-          <div className="mt-5 flex flex-wrap gap-2">
-            {item.tags.map((t) => (
-              <span
-                key={t}
-                className="text-[11px] font-mono uppercase tracking-[0.14em] text-zinc-200 border border-white/20 px-2.5 py-1 rounded-full bg-white/[0.04]"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-
-          <a
-            href={`#contact?interest=${item.slug}`}
+          <Link
+            to={`/request-a-quote?interest=${item.slug}`}
             data-testid={`cta-quote-${item.slug}`}
             className="mt-7 inline-flex items-center gap-2 btn-solid"
           >
             Request Spec & Pricing Quote <ArrowUpRight size={16} />
-          </a>
+          </Link>
         </div>
       </div>
     </motion.article>
@@ -130,18 +96,22 @@ export default function Products() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-14 md:mb-20">
           <div>
-            <div className="mono-label mb-6">[ 03 · Solutions ]</div>
+            <div className="mono-label mb-6">[ 04 · Products ]</div>
             <h2 className="font-display text-4xl md:text-6xl tracking-tighter leading-[0.98]">
-              Three solution pillars.
+              Nine categories.
               <br />
-              <span className="text-zinc-500">Every category, procurement-grade.</span>
+              <span className="text-zinc-500">One partner to bring it all through.</span>
             </h2>
           </div>
-          <p className="max-w-md text-zinc-400 leading-relaxed">
-            From single-workstation rollouts to multi-rack datacenter builds — sourced
-            through authorised OEM channels, staged in Dubai, delivered in-region
-            from Ghana.
-          </p>
+          <div className="max-w-md flex flex-col items-start gap-5">
+            <p className="text-zinc-400 leading-relaxed">
+              From single-workstation rollouts to multi-rack datacenter builds —
+              staged in Dubai, delivered in-region from Ghana.
+            </p>
+            <Link to="/products" data-testid="products-view-all" className="btn-pill">
+              View all categories <ArrowUpRight size={14} />
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5">

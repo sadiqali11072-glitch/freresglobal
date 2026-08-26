@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
+import { useSearchParams } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import { toast } from "sonner";
+import { CONTACT, PRODUCT_CATEGORIES } from "@/lib/site-data";
 
 // Contact form supports TWO backends:
 //   1) Web3Forms (recommended for Cloudflare Pages / static hosting) —
@@ -12,40 +14,29 @@ import { toast } from "sonner";
 const WEB3FORMS_KEY = process.env.REACT_APP_WEB3FORMS_KEY;
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
-const INTERESTS = [
-  { v: "workstations-laptops", l: "Workstations & Laptops" },
-  { v: "storage-components", l: "Storage & Components" },
-  { v: "servers-datacenter", l: "Servers & Datacenter" },
-  { v: "services", l: "IT Services" },
-];
+const INTERESTS = PRODUCT_CATEGORIES.map((c) => ({ v: c.slug, l: c.title }));
 
 const ease = [0.2, 0.8, 0.2, 1];
 
 export default function Contact() {
+  const [searchParams] = useSearchParams();
   const [form, setForm] = useState({
     name: "",
     email: "",
     company: "",
-    interest: "workstations-laptops",
+    interest: INTERESTS[0]?.v || "",
     message: "",
   });
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
-  // Preselect interest chip if url has ?interest=... in the hash (from solution CTAs)
+  // Preselect interest chip from ?interest=... query param (from CTAs)
   useEffect(() => {
-    const parseInterest = () => {
-      const h = window.location.hash || "";
-      const m = h.match(/interest=([a-z-]+)/i);
-      if (!m) return;
-      const val = m[1];
-      if (INTERESTS.some((i) => i.v === val)) {
-        setForm((f) => ({ ...f, interest: val }));
-      }
-    };
-    parseInterest();
-    window.addEventListener("hashchange", parseInterest);
-    return () => window.removeEventListener("hashchange", parseInterest);
+    const val = searchParams.get("interest");
+    if (val && INTERESTS.some((i) => i.v === val)) {
+      setForm((f) => ({ ...f, interest: val }));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const update = (k) => (e) => setForm({ ...form, [k]: e.target.value });
@@ -81,7 +72,7 @@ export default function Contact() {
       }
       setSent(true);
       toast.success("Inquiry received. Our team will respond within one business day.");
-      setForm({ name: "", email: "", company: "", interest: "workstations-laptops", message: "" });
+      setForm({ name: "", email: "", company: "", interest: INTERESTS[0]?.v || "", message: "" });
     } catch (err) {
       const detail =
         err?.response?.data?.detail ||
@@ -116,31 +107,29 @@ export default function Contact() {
               you need to ship.
             </h2>
             <p className="mt-8 text-zinc-400 leading-relaxed max-w-md">
-              Send us a rough spec — fleet size, timeline, region — and
-              you'll hear back from a real person on our team, not a ticket
-              queue. We'll scope it and quote within one business day.
+              Send us a rough spec — quantity, timeline, and where it's
+              headed — and you'll hear back from a real person on our
+              team, not a ticket queue.
             </p>
 
             <div className="mt-14 space-y-6">
               <div>
-                <div className="mono-label mb-2">Sales</div>
-                <a href="mailto:sales@freresglobal.com" data-testid="email-sales" className="ul-link text-lg">
-                  sales@freresglobal.com
-                </a>
-              </div>
-              <div>
-                <div className="mono-label mb-2">Support</div>
-                <a href="mailto:support@freresglobal.com" data-testid="email-support" className="ul-link text-lg">
-                  support@freresglobal.com
-                </a>
+                <div className="mono-label mb-2">Call us</div>
+                {CONTACT.phones.map((p) => (
+                  <a
+                    key={p.number}
+                    href={p.href}
+                    data-testid={`phone-${p.number.replace(/[^0-9]/g, "")}`}
+                    className="ul-link text-lg block w-fit"
+                  >
+                    {p.number}
+                  </a>
+                ))}
               </div>
               <div>
                 <div className="mono-label mb-2">Where we are</div>
                 <p className="text-zinc-300 leading-relaxed">
-                  Accra, Ghana (Home) · Dubai, UAE (Sourcing Office)
-                </p>
-                <p className="text-zinc-500 text-sm mt-1">
-                  Serving Ghana · Nigeria · Ivory Coast · Togo · Benin
+                  Accra, Ghana (Home base) · Dubai, UAE (Sourcing office)
                 </p>
               </div>
             </div>
