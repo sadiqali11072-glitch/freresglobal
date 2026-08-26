@@ -88,12 +88,26 @@ export default function AboutPage() {
             className="grid md:grid-cols-12 gap-10 md:gap-16"
           >
             <div className="md:col-span-4">
-              <h2 className="font-display text-4xl md:text-5xl tracking-tighter leading-[0.98]">
+              <div className="aspect-[4/5] w-full max-w-sm overflow-hidden border border-white/[0.08] bg-[#0A0A0A]">
+                <img
+                  src="/team/nihal-abbas.jpg"
+                  alt="Nihal Abbas, Founder of Freres Global"
+                  data-testid="founder-photo"
+                  className="w-full h-full object-cover"
+                  style={{ filter: "grayscale(15%) contrast(1.05)" }}
+                />
+              </div>
+              <h2 className="font-display text-3xl md:text-4xl tracking-tighter leading-[0.98] mt-8">
                 Nihal Abbas
               </h2>
               <div className="mono-label mt-4 text-zinc-500">Founder</div>
             </div>
             <div className="md:col-span-7 md:col-start-6">
+              <h3 className="font-display text-2xl md:text-3xl tracking-tight leading-tight mb-8">
+                Built on experience.
+                <br />
+                <span className="text-zinc-500">Driven by a bigger vision.</span>
+              </h3>
               <p className="text-zinc-300 leading-relaxed text-lg">
                 Nihal Abbas founded Freres Global in 2026, bringing over ten
                 years in the technology and computer hardware industry —

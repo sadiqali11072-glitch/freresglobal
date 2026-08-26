@@ -223,13 +223,19 @@ export default function RequestQuotePage() {
             <div className="mt-14 flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-t border-white/[0.07] pt-10">
               <p className="text-xs text-zinc-500 max-w-sm leading-relaxed">
                 By submitting you agree to be contacted about this request. We
-                never share your details. Prefer to call?{" "}
+                never share your details. Prefer to call or message?{" "}
                 {CONTACT.phones.map((p, i) => (
                   <React.Fragment key={p.number}>
                     {i > 0 && " · "}
                     <a href={p.href} className="ul-link">{p.number}</a>
                   </React.Fragment>
                 ))}
+                {CONTACT.whatsapp && (
+                  <>
+                    {" · "}
+                    <a href={CONTACT.whatsapp.href} target="_blank" rel="noreferrer" className="ul-link">WhatsApp</a>
+                  </>
+                )}
               </p>
               <button
                 type="submit"
