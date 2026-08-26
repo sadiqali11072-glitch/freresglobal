@@ -18,7 +18,8 @@ const cols = [
     links: [
       { label: "Computing", to: "/products#computing" },
       { label: "Servers & Enterprise Compute", to: "/products#servers-enterprise-compute" },
-      { label: "Storage & Memory", to: "/products#storage-memory" },
+      { label: "Storage", to: "/products#storage" },
+      { label: "Memory", to: "/products#memory" },
       { label: "Networking", to: "/products#networking" },
       { label: "All categories", to: "/products" },
     ],

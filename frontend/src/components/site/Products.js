@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, Server, Laptop, HardDrive, Wifi } from "lucide-react";
 import { PRODUCT_CATEGORIES } from "@/lib/site-data";
 
-const ICONS = { computing: Laptop, "storage-memory": HardDrive, "servers-enterprise-compute": Server, networking: Wifi };
+const ICONS = { computing: Laptop, storage: HardDrive, "servers-enterprise-compute": Server, networking: Wifi };
 
 const IMG_WORKSTATIONS =
   "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=1600&auto=format&fit=crop&q=80";
@@ -12,9 +12,9 @@ const IMG_STORAGE =
   "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1600&auto=format&fit=crop&q=80";
 const IMG_SERVERS =
   "https://images.unsplash.com/photo-1601301099413-6c9b7a8a2a55?w=1600&auto=format&fit=crop&q=80";
-const IMAGES = { computing: IMG_WORKSTATIONS, "storage-memory": IMG_STORAGE, "servers-enterprise-compute": IMG_SERVERS };
+const IMAGES = { computing: IMG_WORKSTATIONS, storage: IMG_STORAGE, "servers-enterprise-compute": IMG_SERVERS };
 
-const FEATURED_SLUGS = ["computing", "storage-memory", "servers-enterprise-compute"];
+const FEATURED_SLUGS = ["computing", "storage", "servers-enterprise-compute"];
 const ITEMS = PRODUCT_CATEGORIES.filter((c) => FEATURED_SLUGS.includes(c.slug)).map((c, i) => ({
   ...c,
   icon: ICONS[c.slug],
@@ -98,7 +98,7 @@ export default function Products() {
           <div>
             <div className="mono-label mb-6">[ 04 · Products ]</div>
             <h2 className="font-display text-4xl md:text-6xl tracking-tighter leading-[0.98]">
-              Nine categories.
+              Ten categories.
               <br />
               <span className="text-zinc-500">One partner to bring it all through.</span>
             </h2>
