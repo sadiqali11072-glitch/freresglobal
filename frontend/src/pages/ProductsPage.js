@@ -13,7 +13,7 @@ export default function ProductsPage() {
     <main data-testid="products-page">
       <PageHeader
         eyebrow="[ Products ]"
-        title="Nine categories, one partner to bring it all through."
+        title="Ten categories, one partner to bring it all through."
         subtitle="In-stock for what's ready now. Sourced back-to-back through our Dubai office for what has to be found specifically for you. Every category below can be requested as a quote — single unit or fleet."
       />
 

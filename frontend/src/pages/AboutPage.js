@@ -109,12 +109,21 @@ export default function AboutPage() {
                 <span className="text-zinc-500">Driven by a bigger vision.</span>
               </h3>
               <p className="text-zinc-300 leading-relaxed text-lg">
-                Nihal Abbas founded Freres Global in 2026, bringing over ten
-                years in the technology and computer hardware industry —
-                including more than six years operating in Ghana. Before
-                founding Freres Global, he led CodeX Computer in Ghana, and
-                has worked with both government and non-government
-                organisations on technology sourcing and implementation.
+                Nihal Abbas has more than ten years of experience in the
+                technology and computer hardware industry, including more
+                than six years operating in the Ghanaian market. Before
+                founding Freres Global, he was involved with and led CodeX
+                Computer in Ghana. In 2026, he started Freres Global as his
+                own venture — motivated by a simple idea: give customers a
+                unified supplier experience, so they can source a broad
+                range of technology products and solutions from one
+                reliable vendor instead of dealing with multiple suppliers.
+              </p>
+              <p className="text-zinc-400 leading-relaxed mt-6">
+                Nihal has worked with numerous government and
+                non-government organisations, helping them source
+                technology products and implement technology-related
+                solutions.
               </p>
               <p className="text-zinc-400 leading-relaxed mt-6">
                 His vision for Freres Global is straightforward: build a
